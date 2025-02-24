@@ -12,7 +12,7 @@ public class MessageUtils {
 
 	public static byte[] encapsulate(Message message) {
 		
-		byte[] segment = new byte[127];
+		byte[] segment = new byte[128];
 		byte[] data = message.getData();
 		
 		// TODO - START
@@ -20,7 +20,7 @@ public class MessageUtils {
 		// encapulate/encode the payload data of the message and form a segment
 		// according to the segment format for the messaging layer
 		
-		if (data.length > 127) {
+		if (data.length > 128) {
 			throw new UnsupportedOperationException(TODO.method());
 		}
 		segment[0] = (byte) data.length; // Første byte inneholder lengden
